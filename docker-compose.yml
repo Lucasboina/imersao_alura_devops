@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    container_name: imersao_devops_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no diretório /app do contêiner
+      # para refletir as mudanças de código em tempo real (hot-reload).
+      - .:/app
+    
+    # Se você tiver um arquivo .env para suas variáveis de ambiente,
+    # descomente a linha abaixo para que o Docker Compose o utilize.
+    # env_file: .env
+
